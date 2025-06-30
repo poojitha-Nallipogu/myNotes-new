@@ -7,7 +7,11 @@ const noteRoutes = require('./routes/notes.route.js');
 const userRoutes = require('./routes/user.route.js');
 const staticRoutes = require('./routes/static.route.js');
 const app = express();
-const PORT = 8000;
+
+const dotenv = require("dotenv")
+
+dotenv.config();
+const PORT = process.env.PORT || 8000;
 
 connectDB().
     then(()=>{
